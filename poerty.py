@@ -2,12 +2,10 @@ import json
 import os
 import random
 import re
-
+from itertools import chain
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-from typing import List, Any
-
-from itertools import chain
+from typing import List
 
 poetry_files: list[str] = os.listdir("./res")
 
@@ -83,7 +81,7 @@ def remove_empty_str(str_list: List[str]):
     return [ii for ii in str_list if len(ii) > 0]
 
 
-purify_pattern = "[,，?？！!死屎尸]"
+purify_pattern = "[,，?？！!死屎尸亡:：]"
 
 
 def purify_poetry_line(line: str):
